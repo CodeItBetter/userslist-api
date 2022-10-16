@@ -76,12 +76,12 @@ app.delete('/user/:id', (req, res) => {
 
 // app.listen(PORT, console.log(`Server running on port ${PORT}`.green.bold));
 
-app.use(express.static(path.join(__dirname, '../build')))
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../build'))
-})
+// app.use(express.static(path.join(__dirname, '../build')))
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, '../build'))
+// })
 
-const port = process.env.PORT || 5000;
-app.listen(port, () => {
-    console.log(`Server started on port ${port}`);
-});
+// const port = process.env.PORT || 5000;
+app.listen(process.env.PORT || 3000, function(){
+	console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  });
