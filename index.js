@@ -49,8 +49,9 @@ let userData = [
 		phoneNumber: 1234567890,
 	},
 ];
+app.get('/', (req, res) => res.send('hello'));
 
-app.get('/', (req, res) => res.send(userData));
+app.get('/user', (req, res) => res.send(userData));
 
 app.post('/user', (req, res) => {
 	const user = { name: req.body.name,
