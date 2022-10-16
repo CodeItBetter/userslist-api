@@ -1,12 +1,9 @@
 {
 	"name": "userlist-api-react-redux-app",
-	"homepage": "https://CodeItBetter.github.io/userslist-api",
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"predeploy": "npm run server",
-		"deploy": "gh-pages -d server",
 		"start": "node server",
 		"server": "nodemon server"
 	},
