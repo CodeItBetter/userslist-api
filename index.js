@@ -73,7 +73,7 @@ app.delete('/user/:id', (req, res) => {
 	res.send(userData);
 });
 
-const PORT = 7000;
+const PORT = process.env.PORT || 7000;
 
 app.listen(PORT, console.log(`Server running on port ${PORT}`.green.bold));
 
