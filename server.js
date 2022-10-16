@@ -72,7 +72,16 @@ app.delete('/user/:id', (req, res) => {
 	res.send(userData);
 });
 
-const PORT = 7000;
+// const PORT = 7000;
 
-app.listen(PORT, console.log(`Server running on port ${PORT}`.green.bold));
+// app.listen(PORT, console.log(`Server running on port ${PORT}`.green.bold));
 
+app.use(express.static(path.join(__dirname, '../build')))
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build'))
+})
+
+const port = process.env.PORT || 5000;
+app.listen(port, () => {
+    console.log(`Server started on port ${port}`);
+});
